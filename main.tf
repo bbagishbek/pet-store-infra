@@ -48,7 +48,6 @@ module "ecs" {
   api_repository_url    = module.ecr.api_repository_url
   vpc_id                = module.vpc.vpc_id
   public_subnets        = module.vpc.public_subnets
-  private_subnets       = module.vpc.private_subnets
   web_tg_arn            = module.networking.ui_target_group_arn
   api_tg_arn            = module.networking.api_target_group_arn
   alb_security_group_id = module.networking.alb_security_group_id

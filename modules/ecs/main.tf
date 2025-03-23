@@ -6,7 +6,7 @@ resource "aws_ecs_service" "web" {
   launch_type     = "EC2"
 
   network_configuration {
-    subnets          = var.private_subnets
+    subnets          = var.public_subnets
     security_groups  = [aws_security_group.ecs_task_sg.id]
     assign_public_ip = false
   }
@@ -31,7 +31,7 @@ resource "aws_ecs_service" "api" {
   launch_type     = "EC2"
 
   network_configuration {
-    subnets          = var.private_subnets
+    subnets          = var.public_subnets
     security_groups  = [aws_security_group.ecs_task_sg.id]
     assign_public_ip = false
   }
